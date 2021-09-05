@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Youtube Channel ID",
+    "version": "1.0",
+    "description": "Makes easier to copy the youtube channel id ",
+    "applications": {
+		"gecko": {
+			"id": "ytid@example.com"
+		}
+	},
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/watch?*"
+            ],
+            "js": [
+                "scripts/ytidmain.js"
+            ]
+        }
+    ],
+    "permissions": [
+		"tabs",
+		"notifications",
+		"https://www.youtube.com/*"
+    ],
+    "background": {
+		"scripts": ["scripts/background.js"]
+	}
+}

@@ -24,10 +24,7 @@ Issues and pull requests are welcome. Any contributions you make are greatly app
 
 ## License
 This extension is distributed under the MIT license. See [LICENSE](./LICENSE) for more information.
-```
 
-### LICENSE:
-```
 MIT License
 
 © since 2021 sacortesh

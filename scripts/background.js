@@ -6,9 +6,18 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo) {
 	
 	if (typeof changeInfo.url !== 'undefined')
 	{
+		console.warn('reeddireection full');
 		chrome.tabs.sendMessage(tabId, {
-			query: 'page updated',
+			query: 'full_navigation',
 			url: changeInfo.url
 		});
 	}
+
+	if (typeof changeInfo.url !== 'undefined' && changeInfo.status === 'complete') {
+		console.warn('reeddireection partial');
+		chrome.tabs.sendMessage(tabId, {
+		  query: 'partial_navigation',
+		  url: changeInfo.url
+		});
+	  }
 });
